@@ -1,16 +1,12 @@
 fn main() {
-    let mut target: u64 = 0;
-    let mut counter = 0;
-    let mut n = 0;
-    while counter < 10001 {
+    let mut sum = 0;
+    for n in 0u64..2_000_000 {
         if is_prime(n){
-            counter +=1;
-            target = n;
+            //println!("is prime: {:?}", n);
+            sum += n;
         }
-        n += 1;
     }
-
-    println!("{}\nNumber: {}", target, counter);
+    println!("{sum}");
 }
 
 fn is_prime(x: u64) -> bool {
