@@ -14,7 +14,6 @@ fn main() {
                             //if !c.to_string().contains("0"){
                                 if is_pandigital(merge_all_strings(a, b, c)){
                                     if one_nine(merge_all_strings(a, b, c)){
-                                        
                                         if !vec.contains(&c){
                                             println!("{:?} * {:?} = {:?}", a, b, c);
                                             vec.push(c);
@@ -45,7 +44,6 @@ fn main() {
                             //if !c.to_string().contains("0"){
                                 if is_pandigital(merge_all_strings(a, b, c)){
                                     if one_nine(merge_all_strings(a, b, c)){
-                                        
                                         if !vec.contains(&c){
                                             println!("{:?} * {:?} = {:?}", a, b, c);
                                             vec.push(c);
