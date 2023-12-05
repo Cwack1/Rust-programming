@@ -1,0 +1,46 @@
+fn main() {
+    'end: for i in (3u64..10000).step_by(2) {
+        let mut t = true;
+        if !is_prime(i) {
+            'outer: for n in (2..i + 1).rev().step_by(2) {
+                if is_prime(n) {
+                    for x in 1..n {
+                        let sum = n + 2 * x.pow(2);
+                        if is_true(sum, n, i, x) {
+                            t = true;
+                            break 'outer;
+                        } else {
+                            t = false;
+                        }
+                    }
+                }
+            }
+            if t == false {
+                println!("Found {:?}", i);
+                break 'end;
+            }
+        }
+    }
+}
+
+fn is_true(sum: u64, n: u64, i: u64, x: u64) -> bool {
+    if sum == i {
+        //println!("{:?} = {:?} + 2 * {:?}²", i, n, x);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+fn is_prime(x: u64) -> bool {
+    let limit = (x as f64).sqrt() as u64;
+    if x <= 1 {
+        return false;
+    }
+    for a in 2..=limit {
+        if x % a == 0 {
+            return false;
+        }
+    }
+    true
+}
