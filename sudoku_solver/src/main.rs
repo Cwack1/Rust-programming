@@ -152,6 +152,8 @@ fn new_process_puzzle(mut puzzle: [[i32; 9]; 9]) -> [[i32; 9]; 9] {
             break;
         }
     }
+
+    //Still need to add a way to check if the number 2 can just be placed on a spesific row, when there are two or more options
     puzzle
 }
 
